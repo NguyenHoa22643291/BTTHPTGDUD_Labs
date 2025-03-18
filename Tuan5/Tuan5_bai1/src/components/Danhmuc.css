@@ -1,0 +1,9 @@
+@import "tailwindcss";
+.item {
+  display: inline-grid;
+  margin: 20px;
+}
+
+.item .item-name {
+  margin: 10px;
+}
