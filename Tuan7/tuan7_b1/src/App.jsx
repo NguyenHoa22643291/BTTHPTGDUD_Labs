@@ -24,6 +24,7 @@ import a3 from '/Lab_05/Avatar (3).png'
 import a4 from '/Lab_05/Avatar (4).png'
 import a5 from '/Lab_05/Avatar (5).png'
 import but from '/Lab_05/create.png'
+import DataTablecp from './components/DataTableComponents'
 import React, { useEffect, useState } from 'react';
 
 function App() {
@@ -197,8 +198,11 @@ function App() {
           </div>
             {/* Detailed Report */}
         <div className="bg-white p-4 rounded shadow-sm mt-3">
-          <div className="flex justify-between mb-4">
+          <div className="flex items-center justify-between mb-4">
+            <div className='flex justify-center'>
+            <img src={sqare} alt="" />
             <h2 className="text-lg font-semibold">Detailed report</h2>
+            </div>
             <div className="space-x-2 flex">
               <button className=" flex border px-3 py-1 rounded text-pink-600">
                 <img src={down} alt="" />
@@ -210,52 +214,55 @@ function App() {
             </div>
           </div>
 
-          <table className="w-full text-left shadow-sm divide-y">
-            <thead>
-              <tr className="text-gray-600">
-                <th></th>
-                <th>Customer Name</th>
-                <th>Company</th>
-                <th>Order Value</th>
-                <th>Order Date</th>
-                <th>Status</th>
+        {/* <table className="w-full text-left shadow-sm divide-y">
+          <thead>
+            <tr className="text-gray-600">
+              <th></th>
+              <th>Customer Name</th>
+              <th>Company</th>
+              <th>Order Value</th>
+              <th>Order Date</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody className=''>
+            {data.map((row, i) => (
+              <tr key={i} className="text-gray-700 shadow-sm">
+                <td className='py-5'>
+                  <input type="checkbox" />
+                </td>
+                <td className='py-5'>
+                  <div className='flex items-center gap-2'>
+                      <img src={row.avatar} alt={row.name} className='rounded-full object-cover' />
+                      <span> {row.name}</span>
+                  </div>
+                  </td>
+                <td className='py-5'>{row.company}</td>
+                <td className='py-5'>{row.value}</td>
+                <td className='py-5'>{row.date}</td>
+                <td className='py-5'>
+                  <span
+                    className={`px-2 py-1 text-xs rounded-full ${
+                      row.status === 'New'
+                        ? 'bg-blue-100 text-blue-600'
+                        : row.status === 'In-progress'
+                        ? 'bg-yellow-100 text-yellow-700'
+                        : 'bg-green-100 text-green-700'
+                    }`}
+                  >
+                    {row.status}
+                  </span>
+                </td>
+                <td>
+                  <img src={but} alt="" />
+                </td>
               </tr>
-            </thead>
-            <tbody className=''>
-              {data.map((row, i) => (
-                <tr key={i} className="text-gray-700 shadow-sm">
-                  <td className='py-5'>
-                    <input type="checkbox" />
-                  </td>
-                  <td className='py-5'>
-                    <div className='flex items-center gap-2'>
-                        <img src={row.avatar} alt={row.name} className='rounded-full object-cover' />
-                        <span> {row.name}</span>
-                    </div>
-                    </td>
-                  <td className='py-5'>{row.company}</td>
-                  <td className='py-5'>{row.value}</td>
-                  <td className='py-5'>{row.date}</td>
-                  <td className='py-5'>
-                    <span
-                      className={`px-2 py-1 text-xs rounded-full ${
-                        row.status === 'New'
-                          ? 'bg-blue-100 text-blue-600'
-                          : row.status === 'In-progress'
-                          ? 'bg-yellow-100 text-yellow-700'
-                          : 'bg-green-100 text-green-700'
-                      }`}
-                    >
-                      {row.status}
-                    </span>
-                  </td>
-                  <td>
-                    <img src={but} alt="" />
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+            ))}
+          </tbody>
+        </table> */}
+        <div className='w-full text-left shadow-sm divide-y'>
+        <DataTablecp></DataTablecp>
+        </div>
         </div>
         </div>
         <div className="footer">
