@@ -26,10 +26,24 @@ import a5 from '/Lab_05/Avatar (5).png'
 import but from '/Lab_05/create.png'
 import DataTablecp from './components/DataTableComponents'
 import React, { useEffect, useState } from 'react';
+//import Sidebar from './components/Sidebar'
+import { useLocation, useNavigate } from 'react-router-dom';
 
 function App() {
   //const [count, setCount] = useState(0)
   const [data, setData] = useState([]);
+
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const menuItems = [
+    { label: 'Dashboard', path: '/', icon: sqare },
+    { label: 'Projects', path: '/', icon: folder },
+    { label: 'Teams', path: '/', icon: group },
+    { label: 'Analytics', path: '/', icon: pie },
+    { label: 'Messages', path: '/', icon: chat },
+    { label: 'Integrations', path: '/', icon: code },
+  ];
 
   const [turnover, setTurnover] = useState(null);
   const [profit, setProfit] = useState(null);
@@ -69,7 +83,8 @@ function App() {
           <img src={a313} alt=""className='m-3'/>
           </div>
           
-        <div className="menu mt-6 space-y-2 border-r "> 
+          {/* sidebar*/}
+        {/* <div className="menu mt-6 space-y-2 border-r "> 
          <button className="flex items-center space-x-2 bg-pink-300 hover:bg-pink-300 text-white px-4 py-2 rounded-lg w-60">
            <img src={sqare} alt="Icon" className="w-5 h-5" />
             <span>Dashboard</span>
@@ -100,7 +115,31 @@ function App() {
           <span>Try now</span>
          </button>
          </div>
-        </div>
+        </div> */}
+        <div className="menu mt-6 space-y-2 border-r">
+              {menuItems.map((item) => {
+                const isActive = location.pathname === item.path;
+                return (
+                  <button
+                    key={item.path}
+                    onClick={() => navigate(item.path)}
+                    className={`flex items-center space-x-2 px-4 py-2 rounded-lg w-60 transition-colors duration-200
+                      ${isActive ? 'bg-pink-500 text-white font-bold' : 'bg-pink-100 text-black hover:bg-pink-300'}`}
+                  >
+                    <img src={item.icon} alt={item.label} className="w-5 h-5" />
+                    <span>{item.label}</span>
+                  </button>
+                );
+              })}
+        
+              {/* Khúc cuối khuyến mãi */}
+              <div className="bg-blue-300 mt-20 p-6 mr-0.5 rounded-lg text-center">
+                <img src={gr} alt="" className="mx-auto mb-4" />
+                <button className="border-2 bg-blue-100 text-blue-600 h-10 px-4 rounded-lg hover:bg-blue-200 transition">
+                  Try now
+                </button>
+              </div>
+            </div>
         
         {/*3 cai card*/}
         <div className="content">
@@ -265,7 +304,7 @@ function App() {
         </div>
         </div>
         </div>
-        <div className="footer">
+        {/* <div className="footer">
         <div className="flex items-center justify-between mt-4">
             <p className="text-sm text-gray-500">63 results</p>
             <div className="flex items-center space-x-2">
@@ -285,7 +324,7 @@ function App() {
               <button className="text-gray-400 hover:text-pink-500">&gt;</button>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </>
   )
