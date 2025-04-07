@@ -1,30 +1,58 @@
-import { useState } from 'react'
+// import { useState } from 'react'
 // import './App.css'
 import './index.css'
-import image1858 from './assets/Lab_05/Image1858.png'
-import Search from './assets/Lab_05/Search.png'
-import Bell from './assets/Lab_05/Bell 1.png'
-import q1 from './assets/Lab_05/Question 1.png'
-import a313 from './assets/Lab_05/Avatar 313.png'
-import sqare from './assets/Lab_05/Squares four 1.png'
-import folder from './assets/Lab_05/Folder.png'
-import group from './assets/Lab_05/Groups.png'
-import pie from './assets/Lab_05/Pie chart.png'
-import chat from './assets/Lab_05/Chat.png'
-import code from './assets/Lab_05/Code.png'
-import gr from './assets/Lab_05/Group.png'
-import buy from './assets/Lab_05/Button 1509.png'
-import money from './assets/Lab_05/Button 1529.png'
-import account from './assets/Lab_05/Button 1530.png'
-import down from './assets/Lab_05/Download.png'
-import move from './assets/Lab_05/Move up.png'
-import a1 from './assets/Lab_05/Avatar (1).png'
-import a2 from './assets/Lab_05/Avatar (2).png'
-import a3 from './assets/Lab_05/Avatar (3).png'
-import a4 from './assets/Lab_05/Avatar (4).png'
-import a5 from './assets/Lab_05/Avatar (5).png'
+import image1858 from '/Lab_05/Image1858.png'
+import Search from '/Lab_05/Search.png'
+import Bell from '/Lab_05/Bell 1.png'
+import q1 from '/Lab_05/Question 1.png'
+import a313 from '/Lab_05/Avatar 313.png'
+import sqare from '/Lab_05/Squares four 1.png'
+import folder from '/Lab_05/Folder.png'
+import group from '/Lab_05/Groups.png'
+import pie from '/Lab_05/Pie chart.png'
+import chat from '/Lab_05/Chat.png'
+import code from '/Lab_05/Code.png'
+import gr from '/Lab_05/Group.png'
+import buy from '/Lab_05/Button 1509.png'
+import money from '/Lab_05/Button 1529.png'
+import account from '/Lab_05/Button 1530.png'
+import down from '/Lab_05/Download.png'
+import move from '/Lab_05/Move up.png'
+import a1 from '/Lab_05/Avatar (1).png'
+import a2 from '/Lab_05/Avatar (2).png'
+import a3 from '/Lab_05/Avatar (3).png'
+import a4 from '/Lab_05/Avatar (4).png'
+import a5 from '/Lab_05/Avatar (5).png'
+import but from '/Lab_05/create.png'
+import React, { useEffect, useState } from 'react';
+
 function App() {
-  const [count, setCount] = useState(0)
+  //const [count, setCount] = useState(0)
+  const [data, setData] = useState([]);
+
+  const [turnover, setTurnover] = useState(null);
+  const [profit, setProfit] = useState(null);
+  const [newCustomer, setNewCustomer] = useState(null);
+
+  //customer
+  useEffect(() => {
+    fetch('/data.json') // Đảm bảo file data.json nằm trong thư mục public/
+      .then((res) => res.json())
+      .then((json) => setData(json));
+  }, []);
+
+  //3cai card
+  useEffect(() => {
+    fetch('/card.json')
+      .then((res) => res.json())
+      .then((data) => {
+        setTurnover(data.turnover);
+        setProfit(data.profit);
+        setNewCustomer(data.newCustomer);
+      })
+      .catch((error) => console.error("Lỗi fetch:", error));
+  }, []);
+
 
   return (
     <>
@@ -34,7 +62,7 @@ function App() {
           <img src={image1858} alt="logo" className='' />
           <h2 className='text-pink-500 text-2xl font-bold justify-between text-center ml-10'> DASHBOARD</h2>
           <img src={Search} alt="" className='ml-170'/>
-          <input type="text" name="" id="" placeholder='Search...' className='border p-2 rounded-lg w-75 bg-gray-400'/>
+          <input type="text" name="" id="" placeholder='Search...' className='border p-2 rounded-lg w-75 bg-gray-100'/>
           <img src={Bell} alt="" className='m-3' />
           <img src={q1} alt="" className='m-3' />
           <img src={a313} alt=""className='m-3'/>
@@ -83,7 +111,7 @@ function App() {
          {/*card ne*/}
           <div className="grid grid-cols-3 gap-4">
              {/*card1*/}
-            <div className='bg-pink-100 rounded-md p-3 shadow-sm relative'>
+            {/* <div className='bg-pink-100 rounded-md p-3 shadow-sm relative'>
               <div className='absolute top-2 right-2'> 
                 <img src={buy} alt="" />
                 </div>
@@ -96,9 +124,25 @@ function App() {
 
               </div>
 
+            </div> */}
+
+               {/* Turnover Card */}
+        {turnover && (
+          <div className='bg-pink-100 rounded-md p-3 relative'>
+            <div className="absolute top-2 right-2">
+              <img src={turnover.img} alt="Turnover Icon" />
             </div>
+            <h3 className='font-bold text-xl'>Turnover</h3>
+            <h1 className='text-2xl font-bold'>{turnover.value}</h1>
+            <div className='flex'>
+              <h3 className='text-green-700'>▲{turnover.percent}</h3>
+              <h3 className='text-gray-600 ms-2'>Period of change</h3>
+            </div>
+          </div>
+      )}
+
              {/*card2*/}
-            <div className='bg-blue-100 rounded-md p-3 shadow-sm relative'>
+            {/* <div className='bg-blue-100 rounded-md p-3 shadow-sm relative'>
               <div className='absolute top-2 right-2'> 
                 <img src={money} alt="" />
                 </div>
@@ -108,9 +152,24 @@ function App() {
                   <h3 className='text-green-600'>▲ 5.39%</h3>
                   <h3 className='text-gray-700 ms-2'> Period of change</h3>
               </div>
-            </div>
+            </div> */}
+
+      {profit && (
+        <div className='bg-green-100 rounded-md p-3 relative'>
+          <div className="absolute top-2 right-2">
+            <img src={profit.img} alt="Profit Icon" />
+          </div>
+          <h3 className='font-bold text-xl'>Profit</h3>
+          <h1 className='text-2xl font-bold'>{profit.value}</h1>
+          <div className='flex'>
+            <h3 className='text-green-700'>{profit.percent}</h3>
+            <h3 className='text-gray-600 ms-2'>Period of change</h3>
+          </div>
+        </div>
+      )}  
+
             {/*card3*/}
-            <div className='bg-blue-100 rounded-md p-3 shadow-sm relative'>
+            {/* <div className='bg-blue-100 rounded-md p-3 shadow-sm relative'>
               <div className='absolute top-2 right-2'> 
                 <img src={account} alt="" />
                 </div>
@@ -120,11 +179,21 @@ function App() {
                   <h3 className='text-green-600'>▲ 6.39%</h3>
                   <h3 className='text-gray-700 ms-2'> Period of change</h3>
               </div>
-            </div>
-          </div>
-          {/*detailed report */}
-          <div className='flex'>
+            </div> */}
 
+    {newCustomer && (
+        <div className='bg-blue-100 rounded-md p-3 relative'>
+          <div className="absolute top-2 right-2">
+            <img src={newCustomer.img} alt="Customer Icon" />
+          </div>
+          <h3 className='font-bold text-xl'>New Customers</h3>
+          <h1 className='text-2xl font-bold'>{newCustomer.value}</h1>
+          <div className='flex'>
+            <h3 className='text-green-700'>{newCustomer.percent}</h3>
+            <h3 className='text-gray-600 ms-2'>Period of change</h3>
+          </div>
+        </div>
+      )}
           </div>
             {/* Detailed Report */}
         <div className="bg-white p-4 rounded shadow-sm mt-3">
@@ -153,57 +222,7 @@ function App() {
               </tr>
             </thead>
             <tbody className=''>
-              {[
-                {
-                  name: 'Elizabeth Lee',
-                  company: 'AvatarSystems',
-                  value: '$359',
-                  date: '10/07/2023',
-                  status: 'New',
-                  avatar: a1,
-                },
-                {
-                  name: 'Carlos Garcia',
-                  company: 'SmoozeShift',
-                  value: '$747',
-                  date: '24/07/2023',
-                  status: 'New',
-                  avatar:a2,
-                },
-                {
-                  name: 'Elizabeth Bailey',
-                  company: 'Prime Time Telecom',
-                  value: '$564',
-                  date: '08/08/2023',
-                  status: 'In-progress',
-                  avatar:a3,
-                },
-                {
-                  name: 'Ryan Brown',
-                  company: 'OmniTech Corporation',
-                  value: '$541',
-                  date: '31/08/2023',
-                  status: 'In-progress',
-                  avatar:a4,
-                },
-
-                {
-                  name: 'Ryan Young',
-                  company: 'DataStream Inc.',
-                  value: '$769',
-                  date: '01/05/2023',
-                  status: 'Completed',
-                  avatar:a5,
-                },
-                {
-                  name: 'Hailey Adams',
-                  company: 'FlowRush',
-                  value: '$922',
-                  date: '10/06/2023',
-                  status: 'Completed',
-                  avatar:a313
-                },
-              ].map((row, i) => (
+              {data.map((row, i) => (
                 <tr key={i} className="text-gray-700 shadow-sm">
                   <td className='py-5'>
                     <input type="checkbox" />
@@ -229,6 +248,9 @@ function App() {
                     >
                       {row.status}
                     </span>
+                  </td>
+                  <td>
+                    <img src={but} alt="" />
                   </td>
                 </tr>
               ))}
