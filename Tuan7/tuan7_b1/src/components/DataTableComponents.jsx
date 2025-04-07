@@ -13,13 +13,13 @@ const DataTableComponents  =()=>{
 
       //truyen tham so cho cot, moi doi tuong trong mang dai dien cho mot cot
       const columns = [
-        {
-          name: '',
-          selector: row => row.avatar,
-          cell: row => (
-            <input type="checkbox" className="py-2" />
-          ),
-        },
+        // {
+        //   name: '',
+        //   selector: row => row.avatar,
+        //   cell: row => (
+        //     <input type="checkbox" className="py-2" />
+        //   ),
+        // },
         {
           name: 'Customer Name',
           selector: row => row.name,
@@ -90,6 +90,9 @@ const DataTableComponents  =()=>{
             highlightOnHover
             striped
             responsive
+            noDataComponent="Không có dữ liệu để hiển thị"
+             selectableRows
+  onSelectedRowsChange={({ selectedRows }) => console.log(selectedRows)}
           />
         </div>
       );

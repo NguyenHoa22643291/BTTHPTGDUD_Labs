@@ -13,15 +13,15 @@ const Sidebar = () => {
 
   const menuItems = [
     { label: 'Dashboard', path: '/', icon: sqare },
-    { label: 'Projects', path: '/projects', icon: folder },
-    { label: 'Teams', path: '/teams', icon: group },
-    { label: 'Analytics', path: '/analytics', icon: pie },
-    { label: 'Messages', path: '/messages', icon: chat },
-    { label: 'Integrations', path: '/integrations', icon: code },
+    { label: 'Projects', path: '/Projects', icon: folder },
+    { label: 'Teams', path: '/Teams', icon: group },
+    { label: 'Analytics', path: '/Analytics', icon: pie },
+    { label: 'Messages', path: '/Message', icon: chat },
+    { label: 'Integrations', path: 'Integrations', icon: code },
   ];
 
   const baseClasses = "flex items-center space-x-2 px-4 py-2 rounded-lg w-60 transition-colors duration-200";
-const activeClasses = "bg-gray-100 text-white font-bold";
+const activeClasses = "bg-pink-300 text-white font-bold";
 const inactiveClasses = "bg-gray-100 text-black hover:bg-pink-300";
 
   return (
@@ -41,12 +41,12 @@ const inactiveClasses = "bg-gray-100 text-black hover:bg-pink-300";
       })}
 
       {/* Khúc cuối khuyến mãi */}
-      <div className='bg-blue-300 mt-20 p-6 mr-0.5'>
-         <img src={gr} alt="" className='mt-25' />
-         <button className='space-x-2 border-2 bg-blue-100  text-blue-600 h-10 w-1110 mt-5 rounded-lg'>
-          <span>Try now</span>
-         </button>
-         </div>
+       <div className='bg-blue-300 mt-20 p-6 mr-5'>
+               <img src={gr} alt="" className='mt-25' />
+               <button className='space-x-2 border-2 bg-blue-100  text-blue-600 h-10 w-70 mt-5 rounded-lg'>
+                <span>Try now</span>
+               </button>
+        </div>
     </div>
   );
 };
