@@ -3,7 +3,13 @@ import DataTable from 'react-data-table-component';
 
 const DataTableComponents  =()=>{
     const [data, setData] = useState([]);
-  
+    // lay gia tri tu file data.json
+    useEffect(() => {
+      fetch('/data.json')
+        .then((response) => response.json())
+        .then((data) => setData(data))
+        .catch((error) => console.error('Error loading data:', error));
+    }, []);
 
       //truyen tham so cho cot, moi doi tuong trong mang dai dien cho mot cot
       const columns = [
