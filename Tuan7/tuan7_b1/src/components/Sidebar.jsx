@@ -43,6 +43,7 @@ const inactiveClasses = "bg-gray-100 text-black hover:bg-pink-300";
       {/* Khúc cuối khuyến mãi */}
        <div className='bg-blue-300 mt-20 p-6 mr-5'>
                <img src={gr} alt="" className='mt-25' />
+               <h1 className='text-2xl font-bold text-black ml-9'>V2.0 is available</h1>
                <button className='space-x-2 border-2 bg-blue-100  text-blue-600 h-10 w-70 mt-5 rounded-lg'>
                 <span>Try now</span>
                </button>

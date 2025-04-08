@@ -9,6 +9,7 @@ const EditUserModal = ({ isOpen, onClose, user, onUpdate }) => {
     value: '',
     date: '',
     status: '',
+    avatar: '',
   });
 
   useEffect(() => {
@@ -19,6 +20,7 @@ const EditUserModal = ({ isOpen, onClose, user, onUpdate }) => {
         value: user.value || '',
         date: user.date || '',
         status: user.status || '',
+        avatar: user.avatar || '',
       });
     }
   }, [user]);
@@ -57,7 +59,7 @@ const EditUserModal = ({ isOpen, onClose, user, onUpdate }) => {
 
         <div className="flex justify-end gap-2">
           <button className="px-4 py-2 bg-gray-300 rounded" onClick={onClose}>Cancel</button>
-          <button className="px-4 py-2 bg-blue-600 text-white rounded" >Save</button>
+          <button className="px-4 py-2 bg-blue-600 text-white rounded" onClick={handleSave}>Save</button>
         </div>
       </div>
     </div>
