@@ -14,6 +14,7 @@ function RootLayout() {
       </div>
       <div className="content space-y-4">
         <Overview />
+        {/*cho hien thi muc con trong cha outlet- thay doi nd theo router*/}
         <Outlet />
       </div>
     </div>

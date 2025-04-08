@@ -8,6 +8,8 @@ import Integrations from './pages/Integrations.jsx';
 import RootLayout from './layout/RootLayout.jsx'; 
 
 const router = createBrowserRouter([
+  //khi vao / se render den RootLayout, trong root se co cac route con
+  //cac route nay se hien thi trong outlet
   {
     path: '/',
     element: <RootLayout />,
@@ -22,6 +24,7 @@ const router = createBrowserRouter([
   }
 ]);
 
+//toan bo app se duoc chay theo router o tren
 function App() {
   return <RouterProvider router={router} />;
 }
