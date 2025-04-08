@@ -10,14 +10,14 @@ const useOverView =()=>{
     
 
       useEffect(() => {
-        fetch('/data.json') // Đảm bảo file data.json nằm trong thư mục public/
+        fetch("http://localhost:3002/customers") // Đảm bảo file data.json nằm trong thư mục public/
           .then((res) => res.json())
           .then((json) => setData(json));
       }, []);
 
      //3cai card
       useEffect(() => {
-        fetch('/card.json')
+        fetch("http://localhost:3002/card")
           .then((res) => res.json())
           .then((data) => {
             setTurnover(data.turnover);

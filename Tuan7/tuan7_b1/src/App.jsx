@@ -8,6 +8,7 @@ import Integrations from './pages/Integrations.jsx';
 import RootLayout from './layout/RootLayout.jsx'; 
 
 const router = createBrowserRouter([
+  //Khi chuyển trang không bị load lại toàn bộ.
   //khi vao / se render den RootLayout, trong root se co cac route con
   //cac route nay se hien thi trong outlet
   {

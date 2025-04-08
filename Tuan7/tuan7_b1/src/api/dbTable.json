@@ -1,0 +1,76 @@
+{
+    "customers": [
+      {
+        "id": 1,
+        "name": "Elizabeth Lee",
+        "company": "AvatarSystems",
+        "value": "$562",
+        "date": "10/07/2023",
+        "status": "New",
+        "avatar": "/Lab_05/Avatar (1).png"
+      },
+      {
+        "id": 2,
+        "name": "Carlos Garcia",
+        "company": "SmoozeShift",
+        "value": "$747",
+        "date": "24/07/2023",
+        "status": "New",
+        "avatar": "/Lab_05/Avatar (2).png"
+      },
+      {
+        "id": 3,
+        "name": "Elizabeth Bailey",
+        "company": "Prime Time Telecom",
+        "value": "$564",
+        "date": "08/08/2023",
+        "status": "In-progress",
+        "avatar": "/Lab_05/Avatar (3).png"
+      },
+      {
+        "id": 4,
+        "name": "Ryan Brown",
+        "company": "OmniTech Corporation",
+        "value": "$541",
+        "date": "31/08/2023",
+        "status": "In-progress",
+        "avatar": "/Lab_05/Avatar (4).png"
+      },
+      {
+        "id": 5,
+        "name": "Ryan Young",
+        "company": "DataStream Inc.",
+        "value": "$769",
+        "date": "01/05/2023",
+        "status": "Completed",
+        "avatar": "/Lab_05/Avatar (5).png"
+      },
+      {
+        "id": 6,
+        "name": "Hailey Adams",
+        "company": "FlowRush",
+        "value": "$922",
+        "date": "10/06/2023",
+        "status": "Completed",
+        "avatar": "/Lab_05/Avatar 313.png"
+      }
+    ],
+    "card": {
+      "turnover": {
+        "value": "$92,405",
+        "percent": "5.39%",
+        "img": "/Lab_05/Button 1509.png"
+      },
+      "profit": {
+        "value": "$62,300",
+        "percent": "3.12%",
+        "img": "/Lab_05/Button 1529.png"
+      },
+      "newCustomer": {
+        "value": "1,230",
+        "percent": "7.50%",
+        "img": "https://res.cloudinary.com/dxfbutjyu/image/upload/v1743782899/Button_1530_zmyqqm.png"
+      }
+    }
+  }
+  
