@@ -53,6 +53,33 @@
       "date": "10/06/2023",
       "status": "Completed",
       "avatar": "/Lab_05/Avatar 313.png"
+    },
+    {
+      "name": "Bong",
+      "company": "Bongcity",
+      "value": "$999",
+      "date": "08/04/2025",
+      "status": "New",
+      "avatar": "/Lab_05/Avatar (1).png",
+      "id": "1d58"
+    },
+    {
+      "id": "02ec",
+      "name": "𝑛𝑢𝑏𝑏",
+      "company": "HoaDuc",
+      "value": "$999",
+      "date": "10/07/2023",
+      "status": "New",
+      "avatar": "/Lab_05/Avatar (1).png"
+    },
+    {
+      "id": "1b7f",
+      "name": "CuoiNao",
+      "company": "AvatarSystems",
+      "value": "$565",
+      "date": "2025-04-13",
+      "status": "In-progress",
+      "avatar": "/Lab_05/Avatar (1).png"
     }
   ],
   "card": {

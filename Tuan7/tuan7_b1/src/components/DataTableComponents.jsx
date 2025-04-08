@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import DataTable from 'react-data-table-component';
 import EditUserModal from './EditUserModal'; // import modal nếu cùng thư mục
+import AddUserModal from './AddUserModal';
 
 const DataTableComponents = () => {
   const [data, setData] = useState([]);
   const [isEditOpen, setIsEditOpen] = useState(false);
   const [selectedUser, setSelectedUser] = useState(null);
+  const [isAddOpen, setIsAddOpen] = useState(false);
 
   const fetchData = () => {
     fetch("http://localhost:3002/customers")
@@ -82,6 +84,14 @@ const DataTableComponents = () => {
 
   return (
     <div className="w-full overflow-x-auto shadow-sm p-4">
+      <div className="flex justify-end mb-2">
+      <button
+        onClick={() => setIsAddOpen(true)}
+        className="px-4 py-2 bg-red-400 text-white rounded hover:bg-red-500 transition"
+        >
+            Add New
+      </button>
+      </div>
       <DataTable
         columns={columns}
         data={data}
@@ -102,7 +112,14 @@ const DataTableComponents = () => {
         user={selectedUser}
         onUpdate={handleUpdate}
       />
+
+      <AddUserModal
+        isOpen={isAddOpen}
+        onClose={() => setIsAddOpen(false)}
+        onAdd={fetchData} // gọi lại fetchData để reload danh sách
+      />
     </div>
+    
   );
 };
 
