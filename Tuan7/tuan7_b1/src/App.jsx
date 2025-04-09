@@ -9,6 +9,7 @@ import RootLayout from './layout/RootLayout.jsx';
 
 const router = createBrowserRouter([
   //Khi chuyển trang không bị load lại toàn bộ.
+// phai chay json-server --watch src/api/dbTable.json --port 3002 de lay du lieu
   //khi vao / se render den RootLayout, trong root se co cac route con
   //cac route nay se hien thi trong outlet
   {
