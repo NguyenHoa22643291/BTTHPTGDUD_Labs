@@ -6,13 +6,15 @@ import counterReducer from "../ReduxTanggiam/reducers/CounterSlide";
 import todoReducer from "../slice/todoSlice"
 import themeReducer from '../slice/themeSlice'
 import cartReducer from '../slice/cartSlice'
+import authReducer from '../slice/authSlice'
 
 const store = configureStore({
   reducer: {
     counter: counterReducer,
     todos: todoReducer,
     theme: themeReducer,
-    cart: cartReducer
+    cart: cartReducer,
+    auth: authReducer
   },
 });
 

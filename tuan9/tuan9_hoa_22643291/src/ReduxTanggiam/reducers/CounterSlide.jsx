@@ -12,3 +12,5 @@ const counterSlide = createSlice({
 });
 export const {increment, decrement}= counterSlide.actions;
 export default counterSlide.reducer;
+
+//khong can switch case. khong define type thu configureStore

@@ -17,7 +17,7 @@ export default function TodoList() {
 
   return (
     <div className="p-4 max-w-md mx-auto">
-      <h2 className="text-2xl font-bold mb-4"> To-do List</h2>
+      <h2 className="text-2xl font-bold mb-4">📝 To-do List</h2>
       <div className="flex gap-2 mb-4">
         <input
           type="text"
@@ -26,7 +26,7 @@ export default function TodoList() {
           className="flex-grow border rounded px-2 py-1"
           placeholder="Nhập công việc..."
         />
-        <button onClick={handleAdd} className="bg-amber-200 text-black px-4 py-1 rounded">
+        <button onClick={handleAdd} className="bg- text-black px-4 py-1 rounded">
           Thêm
         </button>
       </div>

@@ -45,7 +45,7 @@ import CounterUseReduxToolkit from './ReduxTanggiam/components/CounterUseReduxTo
 import Todo from './Cau2/TodoList';
 import ThemeToggle from './Cau3/ThemeToggle';
 import Cart from './Cau4/Cart';
-// import Auth from './Cau5/Auth';
+import Auth from './Cau5/Auth';
 
 const App = () => {
   const [selectedFeature, setSelectedFeature] = useState(null);
