@@ -2,7 +2,7 @@
 //redux devtool de debug va theo doi qua trinh cap nhat state cx nhu thiet lap san mot so middleware
 
 import { configureStore } from "@reduxjs/toolkit";
-import counterReducer from "../reducers/CounterSlide";
+import counterReducer from "../ReduxTanggiam/reducers/CounterSlide";
 
 const store = configureStore({
   reducer: {

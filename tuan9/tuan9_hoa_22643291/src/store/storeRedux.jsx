@@ -2,7 +2,7 @@
 // Bạn sẽ gửi action đến store bằng dispatch(action).
 
 import { createStore } from "redux";
-import counterReducer from "../reducers/CounterReducer";
+import counterReducer from "../ReduxTanggiam/reducers/CounterReducer";
 
 // Khi action được gửi, store sẽ dùng reducer (counterReducer) để tạo ra state mới.
 

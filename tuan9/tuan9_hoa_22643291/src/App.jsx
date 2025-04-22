@@ -36,10 +36,10 @@
 import React, { useState } from 'react';
 import Counter from './Cau1/Counter';
 import { Provider } from 'react-redux';
-import store from './ReduxTanggiam/store/store'
+import store from './store/store'
 import CounterUseReducer from './ReduxTanggiam/components/CounterUseReducer'
 import './App.css'
-import storeRedux from './ReduxTanggiam/store/storeRedux'
+import storeRedux from './store/storeRedux'
 import CounterUseRedux from './ReduxTanggiam/components/CounterUseRedux'
 import CounterUseReduxToolkit from './ReduxTanggiam/components/CounterUseReduxToolkit'
 // import Todo from './Cau2/Todo';
