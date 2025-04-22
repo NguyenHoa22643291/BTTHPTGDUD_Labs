@@ -4,11 +4,13 @@
 import { configureStore } from "@reduxjs/toolkit";
 import counterReducer from "../ReduxTanggiam/reducers/CounterSlide";
 import todoReducer from "../slice/todoSlice"
+import themeReducer from '../slice/themeSlice'
 
 const store = configureStore({
   reducer: {
     counter: counterReducer,
-    todos: todoReducer
+    todos: todoReducer,
+    theme: themeReducer,
   },
 });
 

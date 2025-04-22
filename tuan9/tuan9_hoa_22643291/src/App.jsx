@@ -43,7 +43,7 @@ import storeRedux from './store/storeRedux'
 import CounterUseRedux from './ReduxTanggiam/components/CounterUseRedux'
 import CounterUseReduxToolkit from './ReduxTanggiam/components/CounterUseReduxToolkit'
 import Todo from './Cau2/TodoList';
-// import ThemeToggle from './Cau3/ThemeToggle';
+import ThemeToggle from './Cau3/ThemeToggle';
 // import Cart from './Cau4/Cart';
 // import Auth from './Cau5/Auth';
 
