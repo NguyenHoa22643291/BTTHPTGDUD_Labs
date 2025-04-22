@@ -87,19 +87,19 @@ const App = () => {
                 className="border p-4 bg-white rounded hover:bg-gray-100"
                 onClick={() => handleFeatureClick('ThemeToggle')}
               >
-                Thay đổi giao diện
+                theme- Thay đổi giao diện
               </button>
               <button
                 className="border p-4 bg-white rounded hover:bg-gray-100"
                 onClick={() => handleFeatureClick('Cart')}
               >
-                Giỏ hàng
+                Cart- Giỏ hàng
               </button>
               <button
                 className="border p-4 bg-white rounded hover:bg-gray-100"
                 onClick={() => handleFeatureClick('Auth')}
               >
-                Xác thực
+                auth- Xác thực
               </button>
             </div>
           </div>
