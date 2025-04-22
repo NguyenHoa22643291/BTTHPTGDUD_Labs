@@ -3,10 +3,12 @@
 
 import { configureStore } from "@reduxjs/toolkit";
 import counterReducer from "../ReduxTanggiam/reducers/CounterSlide";
+import todoReducer from "../slice/todoSlice"
 
 const store = configureStore({
   reducer: {
     counter: counterReducer,
+    todos: todoReducer
   },
 });
 

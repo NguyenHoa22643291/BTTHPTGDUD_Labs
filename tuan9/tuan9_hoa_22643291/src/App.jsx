@@ -42,7 +42,7 @@ import './App.css'
 import storeRedux from './store/storeRedux'
 import CounterUseRedux from './ReduxTanggiam/components/CounterUseRedux'
 import CounterUseReduxToolkit from './ReduxTanggiam/components/CounterUseReduxToolkit'
-// import Todo from './Cau2/Todo';
+import Todo from './Cau2/TodoList';
 // import ThemeToggle from './Cau3/ThemeToggle';
 // import Cart from './Cau4/Cart';
 // import Auth from './Cau5/Auth';
@@ -81,7 +81,7 @@ const App = () => {
                 className="border p-4 bg-white rounded hover:bg-gray-100"
                 onClick={() => handleFeatureClick('Todo')}
               >
-                Danh sách việc cần làm
+               TODO list- ds Việc
               </button>
               <button
                 className="border p-4 bg-white rounded hover:bg-gray-100"
